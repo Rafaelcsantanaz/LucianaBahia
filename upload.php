@@ -1,4 +1,7 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] === 'multipart/form-data') {
+  // Processar o upload do arquivo aqui
+  if (isset($_FILES['image'])) {
 // Diretório de destino para o upload
 $targetDir = 'uploads/';
 
