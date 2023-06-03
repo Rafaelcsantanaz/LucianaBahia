@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Luciana Bahia Fotografia</title>
+</head>
+<body>
+  <h1>Luciana Bahia Fotografia</h1>
+
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <input type="submit" value="Upload">
+  </form>
+
+  <h2>Fotos na Biblioteca:</h2>
+  <div class="photo-library">
+    <?php
+      // Exibir as fotos na biblioteca
+      $files = glob('uploads/*');
+      foreach ($files as $file) {
+        echo '<img src="' . $file . '" alt="Foto">';
+      }
+    ?>
+  </div>
+</body>
+</html>
